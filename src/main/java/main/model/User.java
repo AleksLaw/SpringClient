@@ -21,7 +21,7 @@ public class User implements UserDetails {
 
     private String lastName;
 
-    private  int age;
+    private int age;
 
     private String email;
 
@@ -139,5 +139,18 @@ public class User implements UserDetails {
         this.password = password;
     }
 
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

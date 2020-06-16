@@ -1,39 +1,3 @@
-
-
-
-// $(document).ready(function () {
-//     $('#add_button').on('click', function () {
-// //Добавление пользователя
-//         $.ajax
-//         ({
-//             type: "POST",
-//             url: "http://localhost:8080/add",
-//             dataType: 'json',
-//             headers: {
-//                 "Authorization": "Basic " +btoa("1:1")
-//             },
-//             data: $("#addNewUser").serialize(),
-//
-//             success: function (data){
-//                 var id = data.id,
-//                     name = data.name,
-//                     lastName = data.lastName,
-//                     age = data.age,
-//                     email = data.email,
-//                     userRoles = data.userRoles;
-//                 $("tbody:first").append(
-//                     `<tr>
-//                        <td>${id}</td><td>${name}</td><td>${lastName}</td><td>${age}</td><td>${email}</td><td>${userRoles}</td>
-//                        <td><input onclick='editUser(this)' type='button' class='btn btn-primary' value='Edit'></td>
-//                        <td><input onclick='deleteUser(this)' type='button' class='btn btn-danger' value='Delete'></td>
-//                      </tr>`
-//                 );
-//                 $('#addNewUser').trigger('reset');
-//                 $('#userTablePage').trigger('click');
-//             }
-//         });
-//     })
-// });
 $(document).ready(function () {
     $('#add_button').on('click', function () {
 //Добавление пользователя
@@ -79,7 +43,7 @@ function editUser(ths) {
                 $.post("http://localhost:8081/admin/edit", serialized)
                     .done(function (data) {
                         tr.getElementsByTagName("td")[1].innerHTML = data.name
-                        tr.getElementsByTagName("td")[2].innerHTML =  data.lastName
+                        tr.getElementsByTagName("td")[2].innerHTML = data.lastName
                         tr.getElementsByTagName("td")[3].innerHTML = data.age
                         tr.getElementsByTagName("td")[4].innerHTML = data.email
                         tr.getElementsByTagName("td")[5].innerHTML = data.userRoles

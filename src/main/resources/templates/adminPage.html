@@ -86,13 +86,12 @@
                                 <td>
                                     <!-- Button to Open the Modal -->
                                     <input onclick="editUser(this)" type="button" class="btn btn-primary" value="Edit">
-                                    <!--th:id="'butEditStartModal_'+${user.id}"-->
                                     <!-- The Modal -->
                                 </td>
                                 <td>
                                     <!-- Button to Open the Modal -->
                                     <input onclick="deleteUser(this)" type="button" class="btn btn-danger"
-                                           value="Delete"><!--th:id="'butEditStartModal_'+${user.id}"-->
+                                           value="Delete">
                                     <!-- The Modal -->
                                 </td>
                             </tr>
@@ -105,19 +104,18 @@
                             <div class="col">
                                 <div align="center" class="input-group">
                                     <form class="form-singin form-horizontal" id="addNewUser">
-                                        <!-- th:action="@{/admin/add}"method="post"-->
                                         <br>
                                         <h3 class="h3 mb-3 font-weight-normal">Add new user</h3>
                                         <label for="name">First name</label>
-                                        <input type="text" class="form-control" name="name"id="name"/>
+                                        <input type="text" class="form-control" name="name" id="name"/>
                                         <label for="lastName">Last name</label>
-                                        <input type="text" class="form-control" name="lastName"id="lastName">
+                                        <input type="text" class="form-control" name="lastName" id="lastName">
                                         <label for="age">Age</label>
-                                        <input type="number" class="form-control" name="age"id="age">
+                                        <input type="number" class="form-control" name="age" id="age">
                                         <label for="email">Email</label>
-                                        <input type="email" class="form-control" name="email"id="email">
+                                        <input type="email" class="form-control" name="email" id="email">
                                         <label for="password">Password</label>
-                                        <input type="text" class="form-control" name="password"id="password">
+                                        <input type="text" class="form-control" name="password" id="password">
                                         <label for="role">Role</label>
                                         <div class="select" align="center">
                                             <select class="form-control" name="role" id="role" multiple size="2">
@@ -178,7 +176,6 @@
                     </div>
                     <!-- Modal body -->
                     <form class="form-singin form-horizontal" id="userEditModal">
-                        <!--th:action="@{/admin/edit}" method="post"-->
                         <div class="modal-body">
                             <b><p class="text-center mb-0 pb-0">ID</p></b>
                             <input type="text" class="form-control" th:value="id " disabled name="id" id="idE">

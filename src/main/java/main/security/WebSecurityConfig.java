@@ -29,7 +29,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-//                .cors().disable()
                     .authorizeRequests()
                     .antMatchers( "/newAdmin").permitAll()
                     .antMatchers("/admin/**").hasAuthority("ADMIN")
@@ -63,7 +62,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         String authHeader = "Basic " + new String(encodedAuth);
         headers.set("Authorization", authHeader);
         headers.setAccept(Arrays.asList(new MediaType[]{MediaType.APPLICATION_JSON}));
-
         headers.setContentType(MediaType.APPLICATION_JSON);
         return headers;
     }

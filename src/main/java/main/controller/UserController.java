@@ -34,7 +34,7 @@ public class UserController {
 
     @RequestMapping(value = "/admin/adminPage", method = {RequestMethod.GET, RequestMethod.POST})
     public ModelAndView listUsers() {
-        serviceUser.start();
+        serviceUser.findAll();
         User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         ModelAndView modelAndView = new ModelAndView("adminPage");
         modelAndView.getModelMap().addAttribute("listUsers", listReq);

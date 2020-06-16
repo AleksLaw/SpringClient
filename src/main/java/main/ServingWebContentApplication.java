@@ -8,12 +8,6 @@ public class ServingWebContentApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ServingWebContentApplication.class, args);
-        // Authentication  "1:1" login:password
-
-
-
     }
-
-
 
 }
