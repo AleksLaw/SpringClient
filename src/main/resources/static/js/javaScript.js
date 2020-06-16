@@ -1,7 +1,8 @@
 $(document).ready(function () {
     $('#add_button').on('click', function () {
 //Добавление пользователя
-        $.post("http://localhost:8081/admin/add", $("#addNewUser").serialize())
+       // $.post("http://localhost:8081/admin/add", $("#addNewUser").serialize())
+        $.post("/admin/add", $("#addNewUser").serialize())
             .done(function (data) {
                 var id = data.id,
                     name = data.name,
@@ -26,7 +27,7 @@ $(document).ready(function () {
 function editUser(ths) {
     let tr = ths.parentNode.parentNode;
     let id = tr.getElementsByTagName("td")[0].innerHTML;
-    $.get(`http://localhost:8081/admin/get/${id}`)
+    $.get(`/admin/get/${id}`)
         .done(function (data) {
             $('#idE').attr('value', data.id)
             $('#nameE').attr('placeholder', data.name)
@@ -40,7 +41,7 @@ function editUser(ths) {
                 disabled.attr('disabled', 'disabled');
                 $('#modalEdit').modal('hide');
                 $('#userTablePage').trigger('click');
-                $.post("http://localhost:8081/admin/edit", serialized)
+                $.post("/admin/edit", serialized)
                     .done(function (data) {
                         tr.getElementsByTagName("td")[1].innerHTML = data.name
                         tr.getElementsByTagName("td")[2].innerHTML = data.lastName
@@ -57,7 +58,7 @@ function deleteUser(ths) {
     //удаление пользователя
     var tr = ths.parentNode.parentNode;
     var id = tr.getElementsByTagName("td")[0].innerHTML;
-    $.get(`http://localhost:8081/admin/get/${id}`)
+    $.get(`/admin/get/${id}`)
         .done(function (data) {
             $('#idD').attr('value', data.id)
             $('#nameD').attr('placeholder', data.name)
@@ -71,7 +72,7 @@ function deleteUser(ths) {
                 disabled.attr('disabled', 'disabled');
                 $('#modalDelete').modal('hide');
                 $('#userTablePage').trigger('click');
-                $.post("http://localhost:8081/admin/delete", {id: id})
+                $.post("/admin/delete", {id: id})
                     .done(function () {
                         tr.remove();
                         myform.trigger('reset');

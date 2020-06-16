@@ -1,4 +1,4 @@
-package main.config;
+package main.security;
 
 import main.model.User;
 import main.service.ServiceUser;

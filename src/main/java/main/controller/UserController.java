@@ -31,6 +31,10 @@ public class UserController {
         }
         return "redirect:/user/userPageInfo";
     }
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
 
     @RequestMapping(value = "/admin/adminPage", method = {RequestMethod.GET, RequestMethod.POST})
     public ModelAndView listUsers() {

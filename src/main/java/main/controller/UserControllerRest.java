@@ -73,6 +73,7 @@ public class UserControllerRest {
         return byId;
     }
 
+
     private Set<Role> getRoles(@RequestParam("role") String role) {
         Set<Role> userRoles = new HashSet<>();
         String[] split = role.split(",");
